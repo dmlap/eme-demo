@@ -79,7 +79,9 @@ mediaSource.addEventListener('sourceopen', function() {
         return deferred;
       };
  
-  $.get(src)
+  $.get(src, {
+    dataType: 'xml'
+  })
     .then(function(mpd) {
       var base = mpd.querySelector('MPD > BaseURL').textContent,
           segmentTemplate = mpd.querySelector('SegmentTemplate'),
