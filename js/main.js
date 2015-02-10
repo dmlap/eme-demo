@@ -79,7 +79,9 @@ mediaSource.addEventListener('sourceopen', function() {
         return deferred;
       };
  
-  $.get(src, {
+  $.ajax({
+    url: src,
+    type: 'GET',
     dataType: 'xml'
   })
     .then(function(mpd) {
